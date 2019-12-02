@@ -1,0 +1,9 @@
+{
+  "id": "postman",
+  "name": "Postman",
+  "description": "Simple and easy to use email service",
+  "version": "0.1.0",
+  "npmDependencies": {
+    "nodemailer": "6.3.1"
+  } 
+}
