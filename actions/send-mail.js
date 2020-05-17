@@ -36,12 +36,15 @@ exports.default = {
   },
 
   async run (api, { params, response }) {
+    const contentObject = params['format'] === 'html' ? { html: params['body'] } : { text: params['body'] };
+
     const configParams = ["form", "to", "subject"];
-    const mailObj = configParams.reduce((prev, cur) => ({...prev, [cur]: params[cur]}), {
-      ...api.config.postman.mail
+    let mailObj = configParams.reduce((prev, cur) => ({...prev, [cur]: params[cur]}), {
+      ...api.config.postman.mail,
+      ...contentObject,
     });
 
     const info = await api.postman.sendMail(mailObj);
-    response = info;
+    response.info = info;
   }
 }

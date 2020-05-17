@@ -47,7 +47,7 @@ exports.default = {
       // ---------------------------------------------------------------------
       // Default address when sending a email
       // ---------------------------------------------------------------------
-      form: '"Jack Foo" <foo@example.com>',
+      from: '"Jack Foo" <foo@example.com>',
     }
   })
 };
